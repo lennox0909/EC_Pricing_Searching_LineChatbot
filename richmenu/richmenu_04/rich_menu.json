@@ -1,0 +1,50 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "font_size",
+  "chatBarText": "點選字體尺寸",
+  "areas": [
+    {
+      "bounds": {
+        "x": 5,
+        "y": 597,
+        "width": 503,
+        "height": 882
+      },
+      "action": {
+        "type": "postback",
+        "text": "字體小",
+        "data": "menu=richmenu_02&fontsize=small"
+      }
+    },
+    {
+      "bounds": {
+        "x": 634,
+        "y": 499,
+        "width": 789,
+        "height": 826
+      },
+      "action": {
+        "type": "postback",
+        "text": "字體中",
+        "data": "menu=richmenu_02&fontsize=medium"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1502,
+        "y": 359,
+        "width": 951,
+        "height": 952
+      },
+      "action": {
+        "type": "postback",
+        "text": "字體大",
+        "data": "menu=richmenu_02&fontsize=big"
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "4_steps",
+  "chatBarText": "完成問候圖",
+  "areas": [
+    {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1297,
+        "height": 868
+      },
+      "action": {
+        "type": "postback",
+        "text": "上傳圖片",
+        "data": "action=usr_upload_pic"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1315,
+        "y": 9,
+        "width": 1171,
+        "height": 840
+      },
+      "action": {
+        "type": "postback",
+        "text": "請開始輸入問候語",
+        "data": "action=usr_type_hello"
+      }
+    },
+    {
+      "bounds": {
+        "x": 0,
+        "y": 886,
+        "width": 882,
+        "height": 800
+      },
+      "action": {
+        "type": "postback",
+        "text": "請在下方點選字體顏色",
+        "data": "menu=richmenu_03&action=usr_choose_fontcolor"
+      }
+    },
+    {
+      "bounds": {
+        "x": 928,
+        "y": 886,
+        "width": 695,
+        "height": 779
+      },
+      "action": {
+        "type": "postback",
+        "text": "請在下方點選字體大小",
+        "data": "menu=richmenu_04&action=usr_choose_fontsize"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1768,
+        "y": 942,
+        "width": 732,
+        "height": 744
+      },
+      "action": {
+        "type": "postback",
+        "text": "開始製作您的專屬問候圖，即將完成。",
+        "data": "menu=richmenu_01&action=usr_finalize"
+      }
+    }
+  ]
+}

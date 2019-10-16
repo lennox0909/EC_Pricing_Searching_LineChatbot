@@ -1,0 +1,24 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "main",
+  "chatBarText": "4步驟, 搞定問候圖！",
+  "areas": [
+    {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 2496,
+        "height": 1686
+      },
+      "action": {
+        "type": "postback",
+        "text": "依照4步驟，開始做圖！",
+        "data": "menu=richmenu_02"
+      }
+    }
+  ]
+}

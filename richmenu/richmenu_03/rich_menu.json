@@ -1,0 +1,128 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "font_color",
+  "chatBarText": "點選字體顏色",
+  "areas": [
+    {
+      "bounds": {
+        "x": 606,
+        "y": 406,
+        "width": 369,
+        "height": 364
+      },
+      "action": {
+        "type": "postback",
+        "text": "紅色",
+        "data": "menu=richmenu_02&fontcolor=red"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1068,
+        "y": 387,
+        "width": 378,
+        "height": 383
+      },
+      "action": {
+        "type": "postback",
+        "text": "黃色",
+        "data": "menu=richmenu_02&fontcolor=yellow"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1530,
+        "y": 378,
+        "width": 396,
+        "height": 382
+      },
+      "action": {
+        "type": "postback",
+        "text": "綠色",
+        "data": "menu=richmenu_02&fontcolor=green"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1992,
+        "y": 392,
+        "width": 382,
+        "height": 373
+      },
+      "action": {
+        "type": "postback",
+        "text": "藍色",
+        "data": "menu=richmenu_02&fontcolor=blue"
+      }
+    },
+    {
+      "bounds": {
+        "x": 163,
+        "y": 1068,
+        "width": 392,
+        "height": 364
+      },
+      "action": {
+        "type": "postback",
+        "text": "紫色",
+        "data": "menu=richmenu_02&fontcolor=purple"
+      }
+    },
+    {
+      "bounds": {
+        "x": 630,
+        "y": 1054,
+        "width": 373,
+        "height": 392
+      },
+      "action": {
+        "type": "postback",
+        "text": "黑色",
+        "data": "menu=richmenu_02&fontcolor=black"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1086,
+        "y": 1054,
+        "width": 397,
+        "height": 383
+      },
+      "action": {
+        "type": "postback",
+        "text": "白色",
+        "data": "menu=richmenu_02&fontcolor=white"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1535,
+        "y": 1045,
+        "width": 442,
+        "height": 392
+      },
+      "action": {
+        "type": "postback",
+        "text": "灰色",
+        "data": "menu=richmenu_02&fontcolor=gray"
+      }
+    },
+    {
+      "bounds": {
+        "x": 2015,
+        "y": 1026,
+        "width": 406,
+        "height": 415
+      },
+      "action": {
+        "type": "postback",
+        "text": "褐色",
+        "data": "menu=richmenu_02&fontcolor=brown"
+      }
+    }
+  ]
+}

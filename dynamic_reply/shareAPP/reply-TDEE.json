@@ -1,0 +1,18 @@
+[
+{
+  "type": "template",
+  "altText": "this is a buttons template",
+  "template": {
+    "type": "buttons",
+    "actions": [
+      {
+        "type": "uri",
+        "label": "Go",
+        "uri": "https://tdeecalculator.net/"
+      }
+    ],
+    "title": "TDEE Caculator",
+    "text": "TIFF test"
+  }
+}
+]

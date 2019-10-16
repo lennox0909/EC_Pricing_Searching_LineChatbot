@@ -1,0 +1,19 @@
+[
+{
+  "type": "template",
+  "altText": "一鍵查詢三大購物網 + 知名拍賣平台！",
+  "template": {
+    "type": "buttons",
+    "actions": [
+      {
+        "type": "postback",
+        "label": "開始查！",
+        "data": "folder=ecom_site"
+      }
+    ],
+    "thumbnailImageUrl": "https://i.imgur.com/qME5gCJ.png",
+    "title": "一鍵查詢三大購物網 + 知名拍賣平台！",
+    "text": "比價格、比規格、比贈品、比賣家"
+  }
+}
+]

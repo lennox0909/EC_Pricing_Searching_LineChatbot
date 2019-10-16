@@ -6,4 +6,4 @@ For customers, product manager and marketer, it would be a good tool to benchmar
 
 [Shopee](https://shopee.tw/) is Top1 C2C and B2B2C e-commerce platform, also provides an insight on market trend.
 
-Please feel free to contact and discuss. [auther: Leno Tsai](lennox0909@gmail.com)
+Please feel free to contact and discuss. [auther: Leno Tsai](mailto:lennox0909@gmail.com)

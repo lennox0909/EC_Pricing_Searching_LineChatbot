@@ -1,20 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-# from flask import Flask
-# app = Flask(__name__)
-
-# @app.route('/')
-# def hello_world():
-#     return 'This is Flask Server testing...'
-
-
-# In[2]:
-
-
 from flask import Flask, request, abort
 
 from linebot import (
@@ -56,16 +39,6 @@ def callback():
 
     return 'OK'
 
-
-# @handler.add(MessageEvent, message=TextMessage)
-# def handle_message(event):
-#     line_bot_api.reply_message(
-#         event.reply_token,
-#         TextSendMessage(text=event.message.text))
-
-
-
-# In[3]:
 
 
 '''
@@ -281,42 +254,13 @@ def PMY_crawler(search_key_word):
             ]
 
 
-# In[4]:
-
-
-# test = input("key:")
-# PMYresult = PMY_crawler(test)
-# print(PMYresult[0][0])
-# print(PMYresult[9][0])
-
-
-# In[5]:
-
-
-'''
-
-handler處理文字消息
-收到用戶回應的文字消息，
-進行爬蟲後，
-將消息回傳給用戶
-
-'''
-
-# 引用套件
 from linebot.models import (
     MessageEvent, TextMessage
 )
 
-
-
-# 文字消息處理
 @handler.add(MessageEvent,message=TextMessage)
 def process_text_message(event):
 
-    # 讀取本地檔案，並轉譯成消息
-#     result_message_array =[]
-#     replyJsonPath = "./dynamic_reply/"+event.message.text+"/reply.json"
-#     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
 
     PMYresult = PMY_crawler(event.message.text)
     count = 5    
@@ -497,26 +441,15 @@ def process_text_message(event):
         shopee = "【蝦皮購物】\n未找到商品；嘗試不同或更常見的關鍵字"
         
     
-    
-    
-    
-    
-    
-#     print(PMYresult[9])
-    
-    # 消息清單
     reply_message_list = [
     TextSendMessage(text= pchome),
     TextSendMessage(text= momo),
     TextSendMessage(text= yahoo),
     TextSendMessage(text= shopee),
-#     TextSendMessage(text="您查詢的關鍵字："),
+
     TextSendMessage(text=event.message.text)
-#     TextSendMessage(text="請輸入商品名，繼續查詢\n可運用空格 區隔多組關鍵字")
     ]
-#     print("pchome==>",pp)
-#     print("momo==>",mm)
-#     print("yahoo==>",yy)
+
 
     # 發送
     line_bot_api.reply_message(
@@ -525,23 +458,6 @@ def process_text_message(event):
     )
 
 
-# In[6]:
-
-
-'''
-
-消息判斷器
-
-讀取指定的json檔案後，把json解析成不同格式的SendMessage
-
-讀取檔案，
-把內容轉換成json
-將json轉換成消息
-放回array中，並把array傳出。
-
-'''
-
-# 引用會用到的套件
 from linebot.models import (
     ImagemapSendMessage,TextSendMessage,ImageSendMessage,LocationSendMessage,FlexSendMessage
 )
@@ -590,64 +506,6 @@ def detect_json_array_to_new_message_array(fileName):
     return returnArray
 
 
-# In[7]:
-
-
-'''
-
-handler處理文字消息
-
-收到用戶回應的文字消息，
-按文字消息內容，往素材資料夾中，找尋以該內容命名的資料夾，讀取裡面的reply.json
-
-轉譯json後，將消息回傳給用戶
-
-
-
-# 引用套件
-from linebot.models import (
-    MessageEvent, TextMessage
-)
-
-# 文字消息處理
-@handler.add(MessageEvent,message=TextMessage)
-def process_text_message(event):
-
-    # 讀取本地檔案，並轉譯成消息
-    result_message_array =[]
-    replyJsonPath = "./dynamic_reply/"+event.message.text+"/reply.json"
-    result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
-
-    # 發送
-    line_bot_api.reply_message(
-        event.reply_token,
-        result_message_array
-    )
-'''
-
-
-# In[8]:
-
-
-'''
-
-handler處理Postback Event
-
-載入功能選單與啟動特殊功能
-
-解析postback的data，並按照data欄位判斷處理
-
-現有三個欄位
-menu, folder, action, fontcolor, fontsize
-
-若folder欄位有值，則
-    讀取其reply.json，轉譯成消息，並發送
-
-若menu欄位有值，則
-    讀取其rich_menu_id，並取得用戶id，將用戶與選單綁定
-    讀取其reply.json，轉譯成消息，並發送
-
-'''
 from linebot.models import (
     PostbackEvent
 )
@@ -736,35 +594,12 @@ def process_postback_event(event):
                     template_message_dict.get(event.message.text)
                 )
         
-        
 
-
-# In[9]:
-
-
-'''
-用戶follow事件
-'''
-
-'''
-
-製作文字與圖片的教學訊息
-
-'''
 # 將消息模型，文字收取消息與文字寄發消息 引入
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
 )
 
-# 消息清單
-# welcome_message_list = [
-# TextSendMessage(text="一鍵查詢三大購物網！/n規格/n價格、商品比一比/n查詢商品是否上架"),
-# TextSendMessage(text="【PChome 24h購物】/n【Yahoo奇摩購物中心】/n【momo購物網】"),
-#     ImageSendMessage(original_content_url='https://%s/images/003.jpeg' %server_url ,
-#     preview_image_url='https://%s/images/001.jpg' %server_url),
-#     ImageSendMessage(original_content_url='https://%s/images/004.png' %server_url,
-#     preview_image_url='https://%s/images/005.jpg' %server_url)
-# ]
 
 
 from linebot.models import (
@@ -809,92 +644,9 @@ def reply_text_and_get_user_profile(event):
     )
 
 
-# In[10]:
 
-
-
-# def usr_upload_pic():
-    
-#     # 引入相關套件
-#     from linebot.models import (CameraRollAction,QuickReplyButton, QuickReply)
-#     '''
-#     準備QuickReply的Button
-#     '''
-#     # 創建QuickReplyButton
-#     ## 點擊後，切換至照片相簿選擇
-#     cameraRollQRB = QuickReplyButton(
-#         action=CameraRollAction(label="選擇照片")
-#     )
-#     '''
-#     以QuickReply封裝該些QuickReply Button
-#     '''
-#     quickReplyList = QuickReply(
-#         items = [cameraRollQRB]
-#     )
-#     '''
-#     製作TextSendMessage，並將剛封裝的QuickReply放入
-#     '''
-#     ## 將quickReplyList 塞入TextSendMessage 中 
-#     from linebot.models import TextSendMessage
-    
-#     quickReplyTextSendMessage = TextSendMessage(text='請點↓選擇照片↓', quick_reply=quickReplyList)
-
-#     def handle_message(event):
-#         line_bot_api.reply_message(
-#             user_profile,
-#             quickReplyTextSendMessage)
-
-    
-
-#     '''
-#     設計一個字典
-#     '''
-#     template_message_dict = {
-#         "0909":quickReplyTextSendMessage
-#     }
-#     '''
-#     用戶發送文字消息時，會按此進行消息處理
-#     '''
-#     # 用戶發出文字消息時， 按條件內容, 回傳合適消息
-#     @handler.add(MessageEvent, message=TextSendMessage)
-#     def handle_message(event):
-#         line_bot_api.reply_message(
-#             event.reply_token,
-#             quickReplyTextSendMessage
-#         )
-
-
-# In[11]:
-
-
-# app.run()
-
-
-# In[12]:
-
-
-'''
-Application 運行（heroku版）
-'''
 
 import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
-
-
-# In[ ]:
-
-
-'''
-Mac local端啟動Server
-'''
-
-# if __name__=="__main__":
-#     app.run(host='0.0.0.0')
-
-
-# In[ ]:
-
-
-
 
